@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {getAllTareas} from '../api/tareas.api.js'
+import {TareaCard} from "./TareaCard.jsx";
 
 export function TareasList() {
 
@@ -16,12 +17,8 @@ export function TareasList() {
 
     return (
         <div>
-            {tareas.map(tarea => (
-                <div key={tarea.id}>
-                    <h1>{tarea.titulo}</h1>
-                    <p>{tarea.descripcion}</p>
-                </div>
-            ))}
+            {tareas.map((tarea) => (
+                <TareaCard key = {tarea.id} tarea = {tarea} />))}
         </div>
     )
 }
